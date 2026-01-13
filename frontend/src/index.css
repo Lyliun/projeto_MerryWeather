@@ -1,0 +1,15 @@
+:root {
+  --bg-gradient: linear-gradient(135deg, #1a0b2e 0%, #0f051d 100%);
+  --accent-purple: #7c3aed;
+  --accent-red: #ef4444;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  margin: 0;
+  background: var(--bg-gradient);
+  color: #f8fafc;
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, sans-serif;
+}

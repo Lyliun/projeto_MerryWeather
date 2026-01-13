@@ -1,0 +1,201 @@
+/* --- ANIMAÇÕES --- */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeInDropdown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- ESTRUTURA BASE --- */
+.app-container {
+  min-height: 100vh;
+  width: 100%;
+  transition: background 1.2s ease-in-out;
+  background-size: 400% 400% !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+/* --- TEMAS DINÂMICOS --- */
+.theme-default, .theme-clear {
+  background: linear-gradient(-45deg, #1a0b2e, #0f051d, #2d0a1a, #1a0b2e) !important;
+  animation: gradientBG 15s ease infinite !important;
+}
+
+.theme-cloudy {
+  background: linear-gradient(-45deg, #1e1b4b, #2e1065, #1e1b4b) !important;
+  animation: gradientBG 20s ease infinite !important;
+}
+
+.theme-rain {
+  background: linear-gradient(-45deg, #12061f, #1a0b2e, #31081a, #12061f) !important;
+  animation: gradientBG 10s ease infinite !important;
+}
+
+.theme-storm {
+  background: linear-gradient(-45deg, #05010a, #0f051d, #1a050d, #05010a) !important;
+  animation: gradientBG 6s ease infinite !important;
+}
+
+/* --- LOGO MERRYWEATHER --- */
+.logo-text {
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: -2px;
+  color: #ffffff;
+  text-transform: uppercase;
+  position: relative;
+  text-shadow: 0 0 15px rgba(124, 58, 237, 0.6);
+  margin-bottom: 20px;
+}
+
+.accent-red {
+  color: #ef4444;
+  text-shadow: 0 0 20px rgba(239, 68, 68, 0.7);
+}
+
+/* --- INPUT E BUSCA --- */
+input[type="text"] {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: white !important;
+  padding: 12px 20px;
+  border-radius: 12px 0 0 12px;
+  outline: none;
+  width: 250px;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #7c3aed !important;
+  background: rgba(124, 58, 237, 0.1) !important;
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.4);
+}
+
+button {
+  background: linear-gradient(45deg, #7c3aed, #ef4444) !important;
+  border: none !important;
+  color: white !important;
+  padding: 12px 25px;
+  border-radius: 0 12px 12px 0;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.3s ease !important;
+}
+
+button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* --- SUGESTÕES E POPULARES --- */
+
+/* Dropdown de Sugestões (API) */
+.suggestion-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(26, 11, 46, 0.98);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  border-radius: 0 0 12px 12px;
+  list-style: none;
+  padding: 5px 0;
+  margin: 0;
+  z-index: 110;
+  text-align: left;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+.suggestion-list li {
+  padding: 12px 15px;
+  cursor: pointer;
+  color: #e2e8f0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  transition: all 0.2s;
+}
+
+.suggestion-list li:hover {
+  background: rgba(124, 58, 237, 0.3);
+  padding-left: 20px;
+}
+
+/* Novo Dropdown de Populares (Modificação Solicitada) */
+.popular-cities-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding: 15px;
+  background: rgba(15, 5, 29, 0.95);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 12px;
+  margin-top: 10px;
+  z-index: 105;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+  animation: fadeInDropdown 0.3s ease-out;
+}
+
+.popular-label {
+  color: #ef4444;
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 900;
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  text-align: left;
+}
+
+.popular-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 colunas para os 4 lugares */
+  gap: 10px;
+}
+
+.popular-tag {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.popular-tag:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: #ef4444;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);
+}
+
+/* --- AJUSTES NO CARD PRINCIPAL --- */
+main {
+  position: relative;
+  z-index: 10;
+}
+
+main::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(45deg, rgba(124, 58, 237, 0.3), transparent, rgba(239, 68, 68, 0.3));
+  z-index: -1;
+  border-radius: 25px;
+  pointer-events: none;
+}
+
+/* --- SCROLLBAR --- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #7c3aed; border-radius: 10px; }
