@@ -91,51 +91,54 @@ merryweather/
 ```
 ---
 
-🛠️ Instalação
+## 🛠️ Instalação
 
-Pré-requisitos
+### Pré-requisitos
 
-Node.js v18 ou superior
+- Node.js v18 ou superior
 
-npm ou yarn
+- npm ou yarn
+
+```bash
+cd weather-app/backend
+npm install
+npm run dev
+
+ Backend
 
 cd weather-app/backend
 npm install
 npm run dev
 
-### Backend
-
-cd weather-app/backend
-npm install
-npm run dev
-
-### Frontend
+ Frontend
 
 cd weather-app/frontend
 npm install
 npm run dev
 
-▶️ Uso
+```
 
-## 1. Ao acessar a aplicação, o navegador solicitará permissão de localização
+## ▶️ Uso
 
-## 2. O clima local será exibido automaticamente
+ 1. Ao acessar a aplicação, o navegador solicitará permissão de localização
 
-## 3. Use o campo de busca para pesquisar outras cidades
+ 2. O clima local será exibido automaticamente
 
-## 4. O tema visual muda conforme as condições climáticas
+ 3. Use o campo de busca para pesquisar outras cidades
 
-⚡ Performance e Cache
+ 4. O tema visual muda conforme as condições climáticas
+
+## ⚡ Performance e Cache
 
 O backend utiliza Node-Cache para armazenar temporariamente as respostas das APIs externas.
 
-Benefícios:
+### Benefícios:
 
-Menos requisições externas
+- Menos requisições externas
 
-Respostas mais rápidas
+- Respostas mais rápidas
 
-📄 Licença
+## 📄 Licença
 
 Este projeto está licenciado sob a MIT License.
 
